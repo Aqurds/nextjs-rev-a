@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import useCounter from '../components/useCounter';
+import { ButtonInceament, ButtonDecreament, ButtonToogle, CountP } from '../components/styledComponents/Button'
 
 const Counter = () => {
   const [showCount, setShowCount] = useState<boolean>(true);
@@ -11,10 +12,10 @@ const Counter = () => {
 
   return (
     <div>
-      <button onClick={handleToggleCount}>Toggle Count</button>
-      {showCount && <p>Count: {count}</p>}
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
+      <ButtonToogle onClick={handleToggleCount}>Toggle Count</ButtonToogle>
+      {showCount && <CountP>Count: {count}</CountP>}
+      <ButtonInceament onClick={increment}>Increment</ButtonInceament>
+      <ButtonDecreament onClick={decrement}>Decrement</ButtonDecreament>
     </div>
   );
 };
